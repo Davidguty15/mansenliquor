@@ -178,6 +178,7 @@ $sent = false;
 try {
     $mail = new PHPMailer(true);
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
+    $mail->Timeout = 10;
 
     $useSmtp = $config['smtp_user'] !== '' && $config['smtp_pass'] !== '';
     if ($useSmtp) {
